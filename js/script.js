@@ -71,5 +71,7 @@ txtSearch.addEventListener('keyup', function(event) {
             return el.nombre.toLowerCase().includes(event.target.value.toLowerCase()) === true
         });
         llenarCatalogo(newData)
+    } else {
+        llenarCatalogo(data);
     }
 })
