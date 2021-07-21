@@ -1,4 +1,5 @@
 var data = [{
+        id: 1,
         imagen: "https://www.zapatos.uy/storage/10748/conversions/146.W19491000_1920-1200_1555077789_557-thumb.jpg",
         nombre: "Card 1",
         descripcion: "",
@@ -6,6 +7,7 @@ var data = [{
         categoria: ""
     },
     {
+        id: 2,
         imagen: "https://s.fenicio.app/f2/alliuy/catalogo/articulos/521201703201-002-01_2000-2000_1620327701_5b8.jpg",
         nombre: "Card 2",
         descripcion: "",
@@ -13,6 +15,7 @@ var data = [{
         categoria: ""
     },
     {
+        id: 3,
         imagen: "https://ep01.epimg.net/verne/imagenes/2015/09/11/articulo/1441988783_165642_1442161238_sumario_normal.jpg",
         nombre: "Card 3",
         descripcion: "",
@@ -20,6 +23,7 @@ var data = [{
         categoria: ""
     },
     {
+        id: 4,
         imagen: "https://ep01.epimg.net/verne/imagenes/2015/09/11/articulo/1441988783_165642_1442161238_sumario_normal.jpg",
         nombre: "Card 4",
         descripcion: "",
@@ -47,7 +51,7 @@ function llenarCatalogo(productos) {
             </ul>
             <div class="card-body">
                 <a href="#" class="card-link">Detalle</a>
-                <a href="#" class="card-link">Añadir al carrito</a>
+                <a href="#" id="btnCarrito${element.id}" class="card-link btnAdd">Añadir al carrito</a>
             </div>
         </div>
     </div>`;
@@ -75,3 +79,22 @@ txtSearch.addEventListener('keyup', function(event) {
         llenarCatalogo(data);
     }
 })
+
+var adds = document.getElementsByClassName('btnAdd');
+
+for (let index = 0; index < adds.length; index++) {
+    const element = adds[index];
+    element.addEventListener('click', function(event) {
+        event.preventDefault();
+        let id = parseInt(event.target.id.replace('btnCarrito', ''));
+        guardarSession("producto", data); // esto debe de correjirse
+    });
+}
+
+function guardarSession(key, value) {
+    sessionStorage.setItem(key, JSON.stringify(value));
+}
+
+function recuperarSession(key) {
+    return JSON.parse(sessionStorage.getItem(key));
+}
