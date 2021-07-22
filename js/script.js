@@ -87,7 +87,7 @@ for (let index = 0; index < adds.length; index++) {
     element.addEventListener('click', function(event) {
         event.preventDefault();
         let id = parseInt(event.target.id.replace('btnCarrito', ''));
-        guardarSession("producto", data); // esto debe de correjirse
+        guardarSession(id - 1, data[id - 1]); // esto debe de correjirse
     });
 }
 
