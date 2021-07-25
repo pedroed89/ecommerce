@@ -1,37 +1,37 @@
 var data = [{
         id: 1,
         imagen: "https://www.zapatos.uy/storage/10748/conversions/146.W19491000_1920-1200_1555077789_557-thumb.jpg",
-        nombre: "Card 1",
-        descripcion: "",
-        precio: "150",
-        categoria: "",
+        nombre: "Bota dama cuero",
+        descripcion: "Bota de caña media en cuero vacuno negro. Taco de 3 cm de alto. Composición: 100% cuero",
+        precio: "5500",
+        categoria: "Bota dama",
         cantidad: 0
     },
     {
         id: 2,
         imagen: "https://s.fenicio.app/f2/alliuy/catalogo/articulos/521201703201-002-01_2000-2000_1620327701_5b8.jpg",
-        nombre: "Card 2",
-        descripcion: "",
-        precio: "320",
-        categoria: "",
+        nombre: "Camisa Tauro - Negro",
+        descripcion: "Camisa manga larga, de terciopelo con bolsillo en el frente. Composición: 95% Poliéster, 5% Elastano.",
+        precio: "790",
+        categoria: "Camisa dama",
         cantidad: 0
     },
     {
         id: 3,
-        imagen: "https://ep01.epimg.net/verne/imagenes/2015/09/11/articulo/1441988783_165642_1442161238_sumario_normal.jpg",
-        nombre: "Card 3",
-        descripcion: "",
-        precio: "50",
-        categoria: "",
+        imagen: "https://www.zapatos.uy/storage/47479/R15265001_2_1_1920-1200_1616425258_b5f.jpg",
+        nombre: "Jadon polished smooth - Negro",
+        descripcion: "Material: cuero, ligeramente texturizado, muy duradero y con un discreto lustre. Cuenta con una cremallera en el tobillo para facilitar el calce, suela con cámara de aire, Plataforma de 4 cm.",
+        precio: "5000",
+        categoria: "Bota dama",
         cantidad: 0
     },
     {
         id: 4,
         imagen: "https://ep01.epimg.net/verne/imagenes/2015/09/11/articulo/1441988783_165642_1442161238_sumario_normal.jpg",
-        nombre: "Card 4",
-        descripcion: "",
-        precio: "50",
-        categoria: "",
+        nombre: "Pelota Fútbol",
+        descripcion: "Pelota de fútbol blanco/negroELOTA NEO SWERVE",
+        precio: "500",
+        categoria: "Pelota de fútbol",
         cantidad: 0
     }
 ];
@@ -48,11 +48,11 @@ function llenarCatalogo(productos) {
             <img height="250px" src="${element.imagen}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${element.nombre}</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">${element.descripcion}</p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Precio</li>
-                <li class="list-group-item">Categoria</li>
+                <li class="list-group-item">Precio: ${element.precio}</li>
+                <li class="list-group-item">Categoria: ${element.categoria}</li>
     
             </ul>
             <div class="card-body" style="text-align:center;">
